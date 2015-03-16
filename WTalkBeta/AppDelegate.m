@@ -13,6 +13,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize mainView = _mainView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -20,6 +21,16 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+      _mainView=[[MainViewController alloc] init];
+    
+    UINavigationController* nav=[[UINavigationController alloc] initWithRootViewController:_mainView];
+    
+    
+  
+    self.window.rootViewController =nav;
+    
     return YES;
 }
 
